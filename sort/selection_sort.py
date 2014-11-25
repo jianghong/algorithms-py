@@ -1,4 +1,5 @@
 def sort(array):
+
     for i in xrange(len(array)):
         min_index = i
         for j in xrange(i+1, len(array)):
@@ -9,6 +10,7 @@ def sort(array):
     print array
     return array
 
+    
 if __name__ == '__main__':
     assert sort([1]) == [1]
     assert sort([2, 1]) == [1, 2]
