@@ -1,4 +1,4 @@
-def insertion_sort(array):
+def sort(array):
 
     for k in xrange(1, len(array)):
         i = k
@@ -12,5 +12,6 @@ def insertion_sort(array):
 
 
 if __name__ == '__main__':
-    insertion_sort([2, 1])
-    insertion_sort([3, 2, 1])
+    assert sort([1]) == [1]
+    assert sort([2, 1]) == [1, 2]
+    assert sort([3, 2, 1]) == [1, 2, 3]
