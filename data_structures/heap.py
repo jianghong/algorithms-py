@@ -54,9 +54,29 @@ class Heap:
                 return False
         return True
 
+    def peek(self):
+        print "Min: {0}".format(self.heap[0])
+        return self.heap[0]
+
+    """Remove and return root node."""
+    def extract(self):
+        if self.heap:
+            root = self.heap.pop(0)
+            self.size = len(self.heap)
+            self.build_heap()
+
+            print "Extracted: {0}".format(root)
+            return root
+
 
 if __name__ == '__main__':
     assert Heap([2, 1]).verify_min_heap()
     assert Heap([4, 1, 5]).verify_min_heap()
     assert Heap([5, 4, 3, 2, 1]).verify_min_heap()
     assert Heap([1, 2, 10, 9, 4, 2, 4, 20, 19, 18, 4]).verify_min_heap()
+    assert Heap([5, 4, 3, 2 ,1]).peek() == 1
+
+    a = Heap([5, 6, 4, 3 , 1, 2])
+    assert a.extract() == 1
+    assert a.log() == [2, 3, 5, 6, 4]
+    assert a.verify_min_heap()
