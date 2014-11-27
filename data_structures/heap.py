@@ -9,6 +9,12 @@ class Heap:
         self.size = len(self.heap)
         self.build_heap()
 
+    def get_size(self):
+        return self.size
+
+    def get_heap(self):
+        return self.heap
+
     def log(self):
         print self.heap
         return self.heap
@@ -62,7 +68,7 @@ class Heap:
     def extract(self):
         if self.heap:
             root = self.heap.pop(0)
-            self.size = len(self.heap)
+            self.size -= 1
             self.build_heap()
 
             print "Extracted: {0}".format(root)
