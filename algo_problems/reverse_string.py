@@ -1,3 +1,6 @@
+'''
+O(n)
+'''
 def reverse_string(string):
     res = ''
 

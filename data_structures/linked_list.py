@@ -3,6 +3,7 @@ class SentinelNode:
     def __init__(self):
         self.next = self
         self.prev = self
+        self.value = None
 
 
 class LinkedNode:
@@ -18,8 +19,8 @@ class SinglyLinkedList:
         self.sentinel = SentinelNode()
 
     def mass_insert(self, value_list):
-        for value in value_list:
-            self.insert(LinkedNode(value))
+        for i in xrange(len(value_list)-1, -1, -1):
+            self.insert(LinkedNode(value_list[i]))
 
     def insert(self, new_node):
         new_node.next = self.sentinel.next
